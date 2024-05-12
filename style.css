@@ -1,0 +1,337 @@
+@font-face {
+  font-family: myFont;
+  src: url(./public-pixel-font/PublicPixel-E447g.ttf);
+}
+
+* {
+  color: #343434;
+  font-family: myFont;
+  font-size: 9px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f6ee;
+}
+
+.title {
+  height: 80px;
+  font-size: 20px;
+  padding-left: 75px;
+}
+
+.game-container {
+  position: relative;
+  height: 480px;
+  width: 480px;
+  border: 16px solid #28282b;
+  border-top-left-radius: 4%;
+  border-top-right-radius: 4%;
+  background-color: #36454f;
+}
+
+.container-footer {
+  position: relative;
+  border: 16px solid #28282b;
+  border-top: 6px;
+  height: 80px;
+  height: 240px;
+  width: 480px;
+  background-color: #36454f;
+}
+
+.accents {
+  margin: 12px 0px 0px 12px;
+  background-color: #36454f;
+  height: 10px;
+  width: 280px;
+  box-shadow: inset 2px 2px #f9f6ee, inset 0px 0px 0px 3px #343434;
+}
+.game-screen {
+  height: 480px;
+  width: 480px;
+  border-radius: 2%;
+  margin-bottom: 24px;
+  background-image: url(https://t4.ftcdn.net/jpg/01/59/15/41/360_F_159154111_qOLUUAzaQZofRxYsmjoK5O61NqgeWZlC.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.main {
+  position: absolute;
+  background-color: transparent;
+  height: 60px;
+  bottom: 100px;
+  left: 30px;
+}
+
+.main.attack {
+  height: 85px;
+  bottom: 85px;
+  left: 320px;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.main.defeat {
+  height: 100px;
+  bottom: 60px;
+  left: -1px;
+}
+.hidden {
+  display: none;
+}
+
+.enemy {
+  position: absolute;
+  background-color: transparent;
+  height: 60px;
+  bottom: 100px;
+  right: 30px;
+  -webkit-transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.enemy.hit {
+  position: absolute;
+  background-color: transparent;
+  height: 165px;
+  bottom: 47px;
+  right: -35px;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.enemy.attack {
+  height: 125px;
+  right: 350px;
+}
+
+.enemy.defeat {
+  position: absolute;
+  background-color: transparent;
+  height: 150px;
+  bottom: 40px;
+  right: -35px;
+  -webkit-transform: scaleX(1);
+  -moz-transform: scaleX(1);
+  -o-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.main-hp,
+.enemy-hp {
+  background-color: transparent;
+  position: absolute;
+  height: 40px;
+}
+
+.main-hp {
+  top: 20px;
+  left: 10px;
+}
+
+.enemy-hp {
+  top: 20px;
+  right: 10px;
+}
+/* HP BAR (The Green One) */
+.mainhp-layer,
+.enemyhp-layer {
+  position: absolute;
+}
+
+.mainhp-layer {
+  background-color: lightgreen;
+  top: 23px;
+  left: 50px;
+  height: 7px;
+  width: 65px;
+  z-index: 1;
+}
+
+.enemyhp-layer {
+  background-color: red;
+  top: 23px;
+  right: 20px;
+  height: 7px;
+  width: 0px;
+  z-index: 1;
+}
+
+.intro {
+  position: absolute;
+  font-size: 12px;
+  color: #f9f6ee;
+  position: absolute;
+  bottom: 250px;
+  left: 50px;
+}
+
+.loader {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  border: 8px solid transparent;
+  border-top-color: #f3e5ab;
+  border-radius: 50%;
+  bottom: 180px;
+  left: 180px;
+  animation: loading1 1s ease infinite;
+}
+
+.loading-text {
+  position: absolute;
+  color: #f3e5ab;
+  font-size: 10px;
+  bottom: 245px;
+  left: 200px;
+  animation: loading2 1s ease infinite;
+}
+
+.text-placeholder {
+  position: absolute;
+  background-color: transparent;
+  height: 100px;
+  width: 400px;
+  bottom: 0px;
+  left: 45px;
+}
+
+.text {
+  position: absolute;
+  background-color: transparent;
+  color: black;
+  bottom: 40px;
+  left: 90px;
+}
+
+/* Buttons Positioning & Styles */
+.btn-start,
+.choice-btn {
+  border: 0;
+  background-color: #f9f6ee;
+}
+
+.btn-start:hover,
+.choice-btn:hover {
+  color: black;
+  background-color: #f3e5ab;
+}
+
+.btn-start:active,
+.choice-btn:active {
+  color: black;
+  background-color: #f3e5ab;
+  transform: translateY(4px);
+}
+
+.choice-btn.disabled {
+  cursor: not-allowed;
+  opacity: 50%;
+}
+
+.choice-btn {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.btn-start {
+  width: 70px;
+  height: 28px;
+}
+
+.btn-start {
+  position: absolute;
+  bottom: 12px;
+  right: 190px;
+}
+
+.choice-btn.rock {
+  position: absolute;
+  bottom: 140px;
+  right: 54px;
+}
+
+.choice-btn.paper {
+  position: absolute;
+  bottom: 70px;
+  right: 95px;
+}
+
+.choice-btn.scissor {
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+}
+/* Animations */
+
+@keyframes playerAttack {
+  from {
+    transform: translateX(0px);
+  }
+
+  to {
+    transform: translateX(330px);
+  }
+}
+
+.main.run.animate {
+  animation: playerAttack 3s linear;
+}
+
+@keyframes shakeChar {
+  0% {
+    transform: translateY(0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(5px);
+  }
+  10%,
+  30%,
+  50% {
+    transform: translate(-5px);
+  }
+  70%,
+  100% {
+    transform: translate(0);
+  }
+}
+
+.enemy.hit.animate,
+.main.hit.animate {
+  animation: shakeChar 1s linear;
+}
+
+@keyframes loading1 {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes loading2 {
+  from {
+    color: #f3e5ab;
+  }
+  to {
+    color: white;
+  }
+}

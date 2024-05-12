@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="title">ROCK PAPER SCISSOR (NEJI VS. SAKURA)</div>
+
+    <div class="game-container">
+      <div class="start-container">
+        <div class="intro">Press start to start the game...</div>
+        <div class="loader hidden"></div>
+        <div class="loading-text hidden">Loading...</div>
+      </div>
+      <div class="game-screen hidden">
+        <div class="mainchar-container">
+          <!-- Player HP BAR -->
+          <div class="mainhp-layer"></div>
+          <img
+            src="./images/Health Bars-2.png (1)-1.png.png"
+            alt=""
+            class="main-hp"
+          />
+
+          <!-- Player Character -->
+          <img
+            id="test"
+            src="./images/neji_idle.gif"
+            alt=""
+            class="main idle"
+          />
+          <img src="./images/neji_running.gif" alt="" class="main run hidden" />
+          <img
+            src="./images/neji_attack.gif"
+            alt=""
+            class="main attack hidden"
+          />
+          <img
+            src="./images/neji_damage-1.png"
+            alt=""
+            class="main hit hidden"
+          />
+          <img
+            src="./images/neji_defeat.gif"
+            alt=""
+            class="main defeat hidden"
+          />
+        </div>
+        <div class="text-container">
+          <img
+            src="./images/text_placeholder.png"
+            alt=""
+            class="text-placeholder"
+          />
+          <p class="text"></p>
+        </div>
+        <div class="enemy-container">
+          <!-- Enemy HP BAR -->
+          <div class="enemyhp-layer"></div>
+          <img
+            src="./images/Health Bars-1.png (1)-1.png-1.png.png"
+            alt=""
+            class="enemy-hp"
+          />
+          <!-- Enemy Character -->
+          <img src="./images/sakura_idle.gif" alt="" class="enemy idle" />
+          <img
+            src="./images/sakura_blink.gif"
+            alt=""
+            class="enemy blink hidden"
+          />
+          <img
+            src="./images/sakura_attack.gif"
+            alt=""
+            class="enemy attack hidden"
+          />
+          <img
+            src="./images/sakura_damage1.png"
+            alt=""
+            class="enemy hit hidden"
+          />
+          <img
+            src="./images/sakura_defeat.gif"
+            alt=""
+            class="enemy defeat hidden"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container-footer">
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <div class="accents"></div>
+      <button class="btn-start">START</button>
+      <button class="choice-btn rock disabled" disabled>ROCK</button>
+      <button class="choice-btn scissor disabled" disabled>SCISSOR</button>
+      <button class="choice-btn paper disabled" disabled>PAPER</button>
+    </div>
+
+    <!-- <div class="choice-cont">
+      <button class="choice-btn rock">ROCK</button>
+      <button class="choice-btn scissor">SCISSOR</button>
+      <button class="choice-btn paper">PAPER</button>
+    </div> -->
+  </body>
+</html>
